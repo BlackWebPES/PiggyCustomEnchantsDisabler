@@ -4,7 +4,7 @@ api:
 - 3.0.1
 - 3.1.1 # lmao idk if there is one tbh
 version: 1.0.0
-main: MC\PE\Main
+main: saiini\TV\\Main
 author: Saiini14 TV
 load: POSTWORLD
 hard-depend: [PiggyCustomEnchants]
