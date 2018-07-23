@@ -1,8 +1,7 @@
-name: Enchant Disabler
-api: 
-- 3.0.0
+name: EnchantDisabler
+api: [3.0.0]
 version: 1.0.0
-main: saiini\TV\\Main
-author: Saiini14 TV
+main: MC\PE\Main
+author: "Saiini14 TV"
 load: POSTWORLD
-hard-depend: [PiggyCustomEnchants]
+soft-depend: [PiggyCustomEnchants]
