@@ -7,4 +7,4 @@ version: 1.0.0
 main: MC\PE\Main
 author: Saiini14 TV
 load: POSTWORLD
-soft-depend: [PiggyCustomEnchants]
+hard-depend: [PiggyCustomEnchants]
