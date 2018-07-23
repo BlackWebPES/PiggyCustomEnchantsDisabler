@@ -1,29 +1,34 @@
 <?php
-namespace saiini\TV;
-use pocketmine\utils\config;
+declare(strict_types = 1);
+
+namespace MC\PE;
+
+use PiggyCustomEnchants\Main as CE;
 use pocketmine\plugin\PluginBase;
+use pocketmine\utils\config;
 
 /**
  * S a i n i 1 4
  */
+
 /**
  * Class Main
+ *
  * @package MC\PE
  */
-class Main extends PluginBase
-{
+class Main extends PluginBase{
 	/**@var config */
 	public $cfg;
-	public function onEnable()
-	{
-		if (!is_dir($this->getDataFolder())) {
+	
+	public function onEnable(){
+		if(!is_dir($this->getDataFolder())){
 			mkdir($this->getDataFolder());
 		}
 		$this->saveDefaultConfig();
-		/** @var \PiggyCustomEnchants\Main $ce */
+		/** @var CE $ce */
 		$ce = $this->getServer()->getPluginManager()->getPlugin("PiggyCustomEnchants");
 		$ids = $this->getConfig()->get("ids");
-		foreach ($ids as $id) {
+		foreach($ids as $id){
 			$ce->unregisterEnchantment($id);
 		}
 	}
