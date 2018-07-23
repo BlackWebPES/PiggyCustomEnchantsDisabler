@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace MC\PE;
+namespace saiini\TV;
 
 use PiggyCustomEnchants\Main as CE;
 use pocketmine\plugin\PluginBase;
