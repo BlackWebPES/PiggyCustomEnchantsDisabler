@@ -1,5 +1,5 @@
 <?php
-namespace MC\PE;
+namespace saiini\TV;
 use pocketmine\utils\config;
 use pocketmine\plugin\PluginBase;
 
