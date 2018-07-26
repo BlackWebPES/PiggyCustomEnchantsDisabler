@@ -14,7 +14,7 @@ use pocketmine\utils\config;
 /**
  * Class Main
  *
- * @package MC\PE
+ * @package saiini\TV
  */
 class Main extends PluginBase{
 	/**@var config */
