@@ -1,8 +1,8 @@
 <?php
 
-/// ,-.                 ,   ,. 
-//(   `     o o     o '|  / | 
-// `-.  ,-: . . ;-. .  | '--| 
+/// ,-.                 ,   ,.
+//(   `     o o     o '|  / |
+// `-.  ,-: . . ;-. .  | '--|
 //.   ) | | | | | | |  |    | 							| Always on it|
 // `-'  `-` ' ' ' ' '  '    '
 declare(strict_types = 1);
@@ -11,6 +11,7 @@ use PiggyCustomEnchants\Main as CE;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\config;
 use pocketmine\event\Listener;
+use pocketmine\utils\TextFormat as c;
 /**
  * Class Main
  *
@@ -24,23 +25,19 @@ class Main extends PluginBase implements Listener{
 		if (!is_dir($this->getDataFolder())) {
 			mkdir($this->getDataFolder());
 		}
-		if (!mkdir($this->getDataFolder())) {
-			$this->getLogger()->info("cannot load the config file for a strange reason...");
-		}
 		$this->saveDefaultConfig();
 		/** @var CE $ce */
-		if($ce == 0){
-			$this->getLogger()->alert("And odd error appeared...");
-		}
 		$ce = $this->getServer()->getPluginManager()->getPlugin("PiggyCustomEnchants");
 		$ids = $this->getConfig()->get("ids");
 		foreach ($ids as $id) {
 			$ce->unregisterEnchantment($id);
-			$this->getLogger()->info('Disabled: ' . $id);
+			$this->getLogger()->info(c::UNDERLINE.'Disabled: ' . $id);
 			if (!$id) {
 				$this->getLogger()->info('No Enchantment found.');
+				if($id == 0){
+					$this->getLogger()->emergency("Please type an ID...");
+				}
 			}
 		}
 	}
 }
-
