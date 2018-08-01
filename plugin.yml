@@ -3,5 +3,4 @@ api: [3.0.0]
 version: 1.0.0
 main: saiini\TV\Main
 author: "Saiini14 TV"
-load: POSTWORLD
 depend: [PiggyCustomEnchants]
