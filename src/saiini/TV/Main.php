@@ -1,12 +1,10 @@
 <?php
 declare(strict_types = 1);
-
 namespace saiini\TV;
-
 use PiggyCustomEnchants\Main as CE;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\config;
-
+use pocketmine\event\Listener;
 /**
  * S a i n i 1 4
  */
@@ -16,10 +14,9 @@ use pocketmine\utils\config;
  *
  * @package saiini\TV
  */
-class Main extends PluginBase{
+class Main extends PluginBase implements Listener{
 	/**@var config */
 	public $cfg;
-	
 	public function onEnable(){
 		if(!is_dir($this->getDataFolder())){
 			mkdir($this->getDataFolder());
