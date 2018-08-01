@@ -25,19 +25,27 @@ class Main extends PluginBase implements Listener{
 		if (!is_dir($this->getDataFolder())) {
 			mkdir($this->getDataFolder());
 		}
+
 		$this->saveDefaultConfig();
 		/** @var CE $ce */
 		$ce = $this->getServer()->getPluginManager()->getPlugin("PiggyCustomEnchants");
 		$ids = $this->getConfig()->get("ids");
-		foreach ($ids as $id) {
+		foreach ($ids as $id){
 			$ce->unregisterEnchantment($id);
-			$this->getLogger()->info(c::UNDERLINE.'Disabled: ' . $id);
+			$this->getLogger()->info(c::UNDERLINE . 'Disabled: ' . $id);
 			if (!$id) {
 				$this->getLogger()->info('No Enchantment found.');
-				if($id == 0){
-					$this->getLogger()->emergency("Please type an ID...");
+				switch ($id) {
+					case 0:
+						$this->getLogger()->emergency("Please type an ID...");
+						if ($ids -= 0) {
+						} else {
+							$this->getLogger()->info('Something in this plugin broke, SMH!');
+						}
+					break;
 				}
 			}
 		}
 	}
 }
+
