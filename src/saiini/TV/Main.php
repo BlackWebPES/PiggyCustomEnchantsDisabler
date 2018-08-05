@@ -49,3 +49,4 @@ class Main extends PluginBase implements Listener{
 	}
 }
 
+// For opti: lmao, fuck your self with freedom -Saiini14. (btw this is a rewrite)
