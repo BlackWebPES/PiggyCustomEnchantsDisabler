@@ -32,15 +32,15 @@ class Main extends PluginBase implements Listener{
 		$ids = $this->getConfig()->get("ids");
 		foreach ($ids as $id){
 			$ce->unregisterEnchantment($id);
-			$this->getLogger()->info(c::UNDERLINE . 'Disabled: ' . $id);
+			$this->getLogger()->info(c::UNDERLINE . 'disabled: ' . $id);
 			if (!$id) {
-				$this->getLogger()->info('No Enchantment found.');
+				$this->getLogger()->info('no enchantment found');
 				switch ($id) {
 					case 0:
-						$this->getLogger()->emergency("Please type an ID...");
+						$this->getLogger()->emergency("please type an id");
 						if ($ids -= 0) {
 						} else {
-							$this->getLogger()->info('Something in this plugin broke, SMH!');
+							$this->getLogger()->info('something in this plugin broke');
 						}
 					break;
 				}
